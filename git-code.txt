@@ -1,0 +1,390 @@
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop
+$ mkdir palmerpenguins-da
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop
+$ cd palmerpenguins-da
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da
+$ git init
+Initialized empty Git repository in C:/Users/growth/Desktop/palmerpenguins-da/.git/
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ ls -a
+./  ../  .git/
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ touch r-code.Rmd
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ touch git-code.txt
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ mkdir data-source
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data-source/
+        git-code.txt
+        r-code.Rmd
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add .
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-code.txt
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .RData
+        .Rhistory
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ touch .gitignore
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-code.txt
+        modified:   r-code.Rmd
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add r-code.Rmd
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-code.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-code.txt
+        modified:   r-code.Rmd
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        data-source/penguins.png
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add .
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git stats
+git: 'stats' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+.
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-code.txt
+        modified:   r-code.Rmd
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add .
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+
+
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palme
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-code.txt
+        modified:   r-code.Rmd
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add .
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    .gitignore
+        modified:   git-code.txt
+        modified:   r-code.Rmd
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        r-code.html
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add .
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ mkdir doc
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+        new file:   r-code.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    r-code.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        doc/
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git add .
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   data-source/logo.png
+        new file:   data-source/penguins.png
+        new file:   doc/index.html
+        new file:   git-code.txt
+        new file:   r-code.Rmd
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git commit -m "r-code,git-code added,ready to push"
+[master (root-commit) f136fde] r-code,git-code added,ready to push
+ 5 files changed, 1182 insertions(+)
+ create mode 100644 data-source/logo.png
+ create mode 100644 data-source/penguins.png
+ create mode 100644 doc/index.html
+ create mode 100644 git-code.txt
+ create mode 100644 r-code.Rmd
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git log
+commit f136fde1513895fe142f67ee54fbf29f1a17f6e3 (HEAD -> master)
+Author: ayandey1359 <ayandey1359@gmail.com>
+Date:   Thu Nov 30 04:35:53 2023 -0800
+
+    r-code,git-code added,ready to push
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git log --oneline
+f136fde (HEAD -> master) r-code,git-code added,ready to push
+
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git  remote add origin https://github.com/ayandey1359/palmerpenguins-da.git
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git remote
+origin
+
+growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
+$ git remote -v
+origin  https://github.com/ayandey1359/palmerpenguins-da.git (fetch)
+origin  https://github.com/ayandey1359/palmerpenguins-da.git (push)
+
+
+
+
+
+
+
+
+

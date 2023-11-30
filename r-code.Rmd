@@ -1,0 +1,221 @@
+---
+title: "Palmer Penguins Dataset - Data Exploration and Visualization"
+author: "Ayan Dey"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE,warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![](data-source/logo.png){width="665"}
+
+## Introduction
+
+The palmerpenguins package contains two datasets.One is called penguins, and is a simplified version of the raw data,The second dataset is penguins_raw. The penguins data contains size measurements for three penguin species observed on three islands in the Palmer, Archipelago, Antarctica.It is a dataset comprising various measurements of three different penguin species, namely Adelie, Gentoo, and Chinstrap. Both datasets contain data for 344 obs. There are 3 different species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.
+
+These data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license ("No Rights Reserved") in accordance with the [Palmer Station Data Policy](https://lternet.edu/stories/ready-to-teach-r-environmental-datasets-the-lterdatasampler-r-package/) .
+
+#### set-up the projrct directory
+
+```{r}
+# get to know the present working directory
+getwd()
+```
+
+```{r}
+# change to project directory 
+setwd("C:\\Users\\growth\\Desktop\\palmerpenguins-da")
+```
+
+```{r}
+# get confirmation about projrct directory
+getwd()
+```
+
+## Installation
+---
+To install the released version of palmerpenguins from [CRAN](https://cran.r-project.org/web/packages/palmerpenguins/readme/README.html)
+
+```{r}
+# install.packages("palmerpenguins")
+```
+
+**The palemrpenguins packages**
+
+This packages contain two dataset
+
+-   penguins **\< working dataset \>**
+
+-   penguins_raw
+
+## Environment setup
+---
+The first steps is importing the necessary libraries.
+- use of **visdat** package to overview the data 
+- use of **dplyr** packages for data manipulation,
+- use of **tidyr** package to data clean 
+- use of **ggplot2** package to visualize the data,
+**All this above packages are in a super package is called tidyverse.**
+```{r warning=FALSE}
+# firstly import the dataset package
+library(palmerpenguins) 
+```
+-   For this project I will use tidyverse packages
+```{r warning=FALSE}
+# importing the tidyverse package
+library(tidyverse)
+library(visdat)
+```
+## Data Exploration
+--- 
+### Understand the dataet
+```{r}
+# dimention - row : column
+dim(penguins)
+```
+**This data set contain 344 rows, 8 columns**
+##### Read The Data Set
+In this steps will read the dataset
+```{r}
+# all variable (column) names 
+names(penguins)
+```
+```{r}
+# look the dataset
+head(penguins)
+View(penguins) # with tidy manner
+```
+```{r}
+# explore the data type of each column
+glimpse(penguins)
+```
+```{r}
+# understand by Heat Map of the penguins dataset
+vis_dat(penguins) 
+```
+### NULL Values
+---
+##### Find out the NULL values.
+
+```{r}
+# total NULL values in the data set
+sum(is.na(penguins))
+```
+
+**Total 19 missing values are there**
+
+```{r}
+# locate the missing values according the column}
+for ( i in 1:ncol(penguins)){
+    print(paste(c(names(penguins[i]),as.integer(sum(is.na(penguins[i])))) ))
+        }
+```
+
+| Parameters    | Values |
+|---------------|--------|
+| Total Rows    | 344    |
+| Total Columns | 8      |
+| Null Values   | 19     |
+**sex column have maximun which is 11 missing values**
+## **Statistics**
+```{r}
+summary(penguins)
+```
+##### Explore the factor type variable
+why factor type is important: the factor data type mean a variable hold some certain type of values.
+```{r}
+# retrieve all variable(column) which data type is factor type
+penguins %>% select(where(is.factor)) %>%  glimpse()
+```
+```{r}
+# count each penguins with belonging island
+penguins %>% drop_na(species,island) %>% count(species,island)
+```
+```{r}
+ggplot(data=penguins)+
+  geom_bar(mapping=aes(x=island),fill="blue",color="red")+
+  labs(title = "Species",
+       subtitle="Viz. of each Species with each Island ")+
+  theme_minimal()+
+  facet_wrap(~species)
+```
+```{r}
+# count each penguins sex ration with each island
+penguins %>% drop_na(species,sex,island) %>% count(island,species,sex)
+```
+```{r}
+# to draw a sex viz. let take the complte row which dont have missing value
+penguins_x <- penguins[complete.cases(penguins), ]
+```
+
+```{r}
+ggplot(data=penguins_x)+
+  geom_bar(mapping=aes(x=sex),fill="blue",color="red")+
+  labs(title = "Species Sex Ration")+
+  theme_minimal()+
+  facet_wrap(~species)
+```
+**Does the body mass affects the flipper length ?**
+Naturally if the body mass increase then the flipper length also increase . to measure two quantitative variable a scatter plot is a great option, after that a linear line will show how the body mass will affected the flipper length.
+```{r}
+# effect of body mass on flipper length
+ggplot(data=penguins_x)+
+  geom_point(mapping=aes(x=body_mass_g,y=flipper_length_mm,color=species,shape=species))+
+  labs(title = "How body mass affect the Flipper length")+
+  theme_minimal()
+```
+**Does the bill length affect the bill depth ?**
+![](data-source/penguins.png){width="665"}
+```{r}
+# relationship between bill length with bill depth
+ggplot(data=penguins_x,aes(x=bill_length_mm,y=bill_depth_mm))+
+  geom_point(mapping=aes(color=species,shape=species))+
+  geom_smooth()+
+  labs(title = "How bill length affect the bill length > whole species")+
+  theme_minimal()
+```
+```{r}
+# relationship between bill length with bill depth separatelyge each species
+ggplot(data=penguins_x,aes(x=bill_length_mm,y=bill_depth_mm))+
+  geom_point(mapping=aes(color=species,shape=species))+
+  geom_smooth()+
+  labs(title = "How bill length affect the bill length > individual species")+
+  theme_minimal()+facet_wrap(~species)
+```
+```{r}
+o<-penguins %>% select(species,bill_depth_mm) %>% filter(species=="Chinstrap")
+```
+```{r}
+# let understand the distribution and the location of outliers, which is shown in the previous graph,chinstrap > bill_depth_mm
+boxplot(o$bill_depth_mm,main="Boxplot of Bill Depth vector",xlab="Bill Depth",ylab="Values")
+```
+_**Answer**_
+- **Adelie** : the bill depth is proportionally relate with bill length. mean with the increase of bil length the depth od the bill also increase 
+-**chinstrap** : the bill length is proportionally relate the bill depth. but here also have one outlier.
+-**Gentoo** - the bill length is proportionally relate with bill depth.
+
+## Conclusion 
+I did the data analysis of the palmerpenguins data set. Firstly i observe the data by heat map. then i notice that there have many null values, Then locate the null values.For this analysis i didnt remove any null values. 
+so before the visualization I create another data frame as penguins_x , where i loaded with all the complete rows.In this data analysis it is clearly understand how their body mass mass and bill length ,bill depth are varies respectively with species,Also the body type according there area. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
