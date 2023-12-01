@@ -1,3 +1,5 @@
+  ..         git. code
+===========================================
 growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop
 $ mkdir palmerpenguins-da
 
@@ -6,8 +8,7 @@ $ cd palmerpenguins-da
 
 growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da
 $ git init
-Initialized empty Git repository in C:/Users/growth/Desktop/palmerpenguins-da/.git/
-
+Initialized empty Git repository in C:/Users/growth/Desktop/palmerpenguins-da/.git/
 growth@DESKTOP-VGEESV7 MINGW64 ~/Desktop/palmerpenguins-da (master)
 $ ls -a
 ./  ../  .git/
