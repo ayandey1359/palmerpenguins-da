@@ -5,10 +5,13 @@ palmer-penguins is a extremely popular data set in the Data Science.So I pick up
 
 This Repository contain:
 
-#### r-code.Rmd : In this file I use R markdown format to do EDA.
+#### r-code.Rmd : 
+In this file I use R markdown format to do EDA.
 
-#### git-code: This file contains all the git code which is used during this project.
+#### git-code: 
+This file contains all the git code which is used during this project.
 
-#### docs: This folder contains the HTML format of r-code , the main purpose of this file is to generate a GitHub page.  To understand the project in very tidy manner. 
+#### docs: 
+This folder contains the HTML format of r-code , the main purpose of this file is to generate a GitHub page.  To understand the project in very tidy manner. 
 
-The EDA project page is [here](https://ayandey1359.github.io/palmerpenguins-da/)
+### The EDA project page is [here](https://ayandey1359.github.io/palmerpenguins-da/)
