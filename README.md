@@ -19,7 +19,8 @@ This folder contains the HTML format of r-code , the main purpose of this file i
 ### The EDA project page is [here](https://ayandey1359.github.io/palmerpenguins-da/)
 
 ---
-##### Contact [LinkdIn](www.linkedin.com/in/ayandeyro)
+##### Contact [LinkdIn](https://www.linkedin.com/in/ayandeyro)  
+
 ###### Name: Ayan Dey
 ###### phone: +91 9531553365
 ###### e-mail: ayandey1359@gmail.com
