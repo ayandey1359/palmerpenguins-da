@@ -1,5 +1,5 @@
 # Palmer-Penguins Data Analysis - Repository 
-palmer-penguins is a extremely popular data set in the Data Science.This project is about Exploratory Data Analysis (EDA) of palmer-penguins dataset.
+palmer-penguins is a extremely popular data set in the Data Science.This project is about Exploratory Data Analysis (EDA) of palmer-penguins dataset.  
 **Language:** R Programming 
 ---
 
